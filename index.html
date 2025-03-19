@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mood Tracker</h1>
+            <p class="subtitle">Track your emotional journey</p>
+        </header>
+
+        <section class="mood-input">
+            <h2>How are you feeling today?</h2>
+            <p id="current-date"></p>
+            <div class="mood-options">
+                <button class="mood-btn" data-mood="happy">😊</button>
+                <button class="mood-btn" data-mood="excited">😁</button>
+                <button class="mood-btn" data-mood="neutral">😐</button>
+                <button class="mood-btn" data-mood="sad">😔</button>
+                <button class="mood-btn" data-mood="angry">😡</button>
+            </div>
+            <div class="mood-note">
+                <textarea id="mood-note-input" placeholder="Add a note about your day (optional)"></textarea>
+                <button id="save-mood">Save</button>
+            </div>
+        </section>
+
+        <section class="mood-history">
+            <div class="view-controls">
+                <h2>Your Mood History</h2>
+                <div class="view-buttons">
+                    <button class="view-btn active" data-view="day">Day</button>
+                    <button class="view-btn" data-view="week">Week</button>
+                    <button class="view-btn" data-view="month">Month</button>
+                </div>
+            </div>
+            
+            <div class="calendar-view">
+                <div class="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <h3 id="calendar-title">Month Year</h3>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div id="calendar-days" class="calendar-days"></div>
+            </div>
+
+            <div class="timeline-view">
+                <div id="timeline-container"></div>
+            </div>
+        </section>
+
+        <section class="mood-details" id="mood-details">
+            <div class="mood-details-content">
+                <button class="close-btn" id="close-details">×</button>
+                <h3 id="detail-date"></h3>
+                <div id="detail-mood" class="detail-mood"></div>
+                <p id="detail-note"></p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
