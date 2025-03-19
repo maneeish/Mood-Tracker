@@ -99,7 +99,7 @@ function saveMood() {
   alert("Mood saved successfully!")
 }
 
-// Format date as YYYY-MM-DD for storage key
+
 function formatDateKey(date) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`
 }
@@ -136,36 +136,36 @@ function renderCalendar() {
   const year = currentViewDate.getFullYear()
   const month = currentViewDate.getMonth()
 
-  // Update calendar title
+ 
   calendarTitle.textContent = new Date(year, month, 1).toLocaleDateString("en-US", { month: "long", year: "numeric" })
 
-  // Clear previous calendar days
+
   calendarDaysContainer.innerHTML = ""
 
-  // Get first day of month and last day of month
+ 
   const firstDay = new Date(year, month, 1)
   const lastDay = new Date(year, month + 1, 0)
 
-  // Get the day of the week for the first day (0 = Sunday, 6 = Saturday)
+ 
   const firstDayIndex = firstDay.getDay()
 
-  // Get the total number of days in the month
+  
   const daysInMonth = lastDay.getDate()
 
-  // Get days from previous month to fill the first row
+
   const prevMonthLastDay = new Date(year, month, 0).getDate()
 
-  // Get stored mood data
+  
   const moodData = JSON.parse(localStorage.getItem("moodData")) || {}
 
-  // Current date for highlighting today
+  
   const today = new Date()
   const todayFormatted = formatDateKey(today)
 
-  // Create calendar days
+ 
   let days = ""
 
-  // Previous month days
+  
   for (let i = firstDayIndex; i > 0; i--) {
     const day = prevMonthLastDay - i + 1
     const date = new Date(year, month - 1, day)
@@ -228,7 +228,7 @@ function loadMoodHistory() {
  
   entries.sort((a, b) => b.timestamp - a.timestamp)
 
-  // Filter entries based on current view
+ 
   let filteredEntries = []
   const today = new Date()
 
